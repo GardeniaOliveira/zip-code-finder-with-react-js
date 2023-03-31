@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Form from "./components/Form";
 import Result from "./components/Result";
 import api from "./services/api";
@@ -6,6 +6,7 @@ import api from "./services/api";
 
 const App = () => {
   const [input, setInput] = useState();
+  const [zipCode, setZipCode] = useState({});
 
   const handleSearch = async (e) => {
     e.preventDefault();
@@ -16,15 +17,15 @@ const App = () => {
     }
 
     try {
-      const response = await api.get(`${input}/json`)
-      console.log(response)
+      const response = await api.get(`${input}/json`);
+      setZipCode(response.data);
+      setInput('')
     } catch {
       alert('Zip code could not find')
+      setInput('')
     }
   }
-  // useEffect(() => {
 
-  // });
   return (
     <>
       <Form
@@ -34,7 +35,15 @@ const App = () => {
         onChange={(e) => setInput(e.target.value)}
         onClick={handleSearch}
       />
-      <Result code={input} address={'Greenwich Village, New York, NY, USA'} />
+      <Result
+        code={zipCode.cep}
+        address={`
+      ${zipCode.logradouro},
+      ${zipCode.bairro}, 
+      ${zipCode.localidade}, 
+      ${zipCode.uf}
+      `}
+      />
     </>
   );
 }
