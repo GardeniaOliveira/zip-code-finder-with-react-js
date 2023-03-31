@@ -23,7 +23,7 @@ text-align: center;
 margin: 10px auto;
 font-size: 26px;
 `
-export const InputLabel = styled.p`
+export const InputLabel = styled.label`
 margin: 10px auto;
 `
 export const InputTitle = styled.p`

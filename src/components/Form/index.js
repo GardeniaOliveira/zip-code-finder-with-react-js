@@ -2,7 +2,7 @@
 import { FiSearch } from 'react-icons/fi'
 import * as C from "./styles";
 
-const Form = ({ title, inputTitle, inputValue }) => {
+const Form = ({ title, inputTitle, inputValue, onChange, onClick }) => {
 
 
     return (
@@ -12,8 +12,8 @@ const Form = ({ title, inputTitle, inputValue }) => {
             <C.InputLabel>
                 <C.InputTitle>{inputTitle}</C.InputTitle>
                 <C.Form>
-                    <input type="text" value={inputValue} />
-                    <C.Button type="submit">
+                    <input type="text" value={inputValue} onChange={onChange} />
+                    <C.Button type="submit" onClick={onClick}>
                         <FiSearch size={25} color='#FFF' />
                     </C.Button>
                 </C.Form>
