@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
- min-height: 100vh;
+// export const Container = styled.div`
+//  min-height: 100vh;
 
-`
+// `
 export const FormArea = styled.div`
 background-color: #083344;
   min-height: 240px;
@@ -38,7 +38,7 @@ gap: 10px;
 
 input[type="text"] {
     border: 1px solid transparent;
-    color: white;
+    color: black;
     border-radius: 5px;
     padding: 10px;
     outline-color:#083344;

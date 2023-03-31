@@ -2,27 +2,24 @@
 import { FiSearch } from 'react-icons/fi'
 import * as C from "./styles";
 
-const Form = ({ title, inputTitle, code, address }) => {
-    return (
-        <C.Container>
-            <C.FormArea>
-                <C.Title >{title}</C.Title>
-                <C.InputLabel>
-                    <C.InputTitle>{inputTitle}</C.InputTitle>
-                    <C.Form>
-                        <input type="text" />
-                        <C.Button type="submit">
-                            <FiSearch size={25} color='#FFF' />
-                        </C.Button>
-                    </C.Form>
-                </C.InputLabel>
-            </C.FormArea>
+const Form = ({ title, inputTitle, inputValue }) => {
 
-            <C.Result>
-                <C.TitleCode>{code}</C.TitleCode>
-                <C.Address>{address}</C.Address>
-            </C.Result>
-        </C.Container>
+
+    return (
+
+        <C.FormArea>
+            <C.Title >{title}</C.Title>
+            <C.InputLabel>
+                <C.InputTitle>{inputTitle}</C.InputTitle>
+                <C.Form>
+                    <input type="text" value={inputValue} />
+                    <C.Button type="submit">
+                        <FiSearch size={25} color='#FFF' />
+                    </C.Button>
+                </C.Form>
+            </C.InputLabel>
+        </C.FormArea>
+
     )
 }
 export default Form
