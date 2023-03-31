@@ -37,12 +37,17 @@ const App = () => {
       />
       <Result
         code={zipCode.cep}
+
         address={`
-      ${zipCode.logradouro},
-      ${zipCode.bairro}, 
-      ${zipCode.localidade}, 
-      ${zipCode.uf}
-      `}
+
+
+          ${zipCode.logradouro || ''},
+          ${zipCode.bairro || ''}, 
+          ${zipCode.localidade || ''},
+          ${zipCode.uf || ''} 
+          `}
+
+
       />
     </>
   );

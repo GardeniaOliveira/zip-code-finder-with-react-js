@@ -2,6 +2,7 @@
 import * as C from "./styles";
 
 const Result = ({ code, address }) => {
+    if (!code || !address) return null;
     return (
 
         <C.Result>
